@@ -64,7 +64,7 @@ namespace Travel_agency {
 
         private void loadFormsList() {
             forms.Add(new Perfil(super_user, menuStrip1));
-            forms.Add(new Sucursal());
+            forms.Add(new Sucursales());
         }
 
 

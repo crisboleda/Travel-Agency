@@ -121,11 +121,11 @@ namespace Travel_agency {
         }
 
         private void listViewVuelos_SelectedIndexChanged(object sender, EventArgs e) {
-            btnCreateVuelo.Enabled = true;
+            DisableBtnUpdateDelete();
         }
 
         private void Click_Window(object sender, EventArgs e) {
-            btnCreateVuelo.Enabled = true;
+            DisableBtnUpdateDelete();
         }
 
         private void btnUpdateVuelo_Click(object sender, EventArgs e) {
@@ -188,8 +188,10 @@ namespace Travel_agency {
         }
 
         private void DisableBtnUpdateDelete() {
+            btnCreateVuelo.Enabled = true;
             btnUpdateVuelo.Enabled = false;
             btnDeleteVuelo.Enabled = false;
+            clearBoxes();
         }
     }
 }

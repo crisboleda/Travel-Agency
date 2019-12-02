@@ -77,6 +77,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PanelTurista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PanelTurista.Designer.cs">
+      <DependentUpon>PanelTurista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReservarVuelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReservarVuelo.Designer.cs">
+      <DependentUpon>ReservarVuelo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vuelos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +128,12 @@
     </Compile>
     <Compile Include="AgencySucursal\Sucursal.cs" />
     <Compile Include="AgencySucursal\SucursalManager.cs" />
+    <EmbeddedResource Include="PanelTurista.resx">
+      <DependentUpon>PanelTurista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservarVuelo.resx">
+      <DependentUpon>ReservarVuelo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vuelos.resx">
       <DependentUpon>Vuelos.cs</DependentUpon>
     </EmbeddedResource>

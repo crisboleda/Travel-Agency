@@ -33,3 +33,5 @@ C:\Users\Cristhian\source\repos\Travel_agency\Travel_agency\obj\Debug\Travel_age
 C:\Users\Cristhian\source\repos\Travel_agency\Travel_agency\obj\Debug\Travel_agency.Perfil.resources
 C:\Users\Cristhian\source\repos\Travel_agency\Travel_agency\obj\Debug\Travel_agency.Sucursales.resources
 C:\Users\Cristhian\source\repos\Travel_agency\Travel_agency\obj\Debug\Travel_agency.Vuelos.resources
+C:\Users\Cristhian\source\repos\Travel_agency\Travel_agency\obj\Debug\Travel_agency.PanelTurista.resources
+C:\Users\Cristhian\source\repos\Travel_agency\Travel_agency\obj\Debug\Travel_agency.ReservarVuelo.resources

@@ -41,6 +41,11 @@ namespace Travel_agency {
                     Hide();
                     PanelAdmin view_admin = new PanelAdmin(super_user, this);
                     view_admin.Show();
+
+                }else {
+                    Hide();
+                    PanelTurista viewTurista = new PanelTurista(super_user, this);
+                    viewTurista.Show();
                 }
             }
         }
@@ -62,6 +67,16 @@ namespace Travel_agency {
 
                 User new_user = new User(Convert.ToInt32(cedula), "Turista", name, lastName, address, cellphone, email, password);
                 _UserManager.CreateUser(new_user);
+                clearBoxes();
+                MessageBox.Show("Se regristró correctamente, Ahora inicie sesión");
+            }
+        }
+
+        private void clearBoxes() {
+            foreach (Control ctr in Controls) {
+                if (ctr is TextBox) {
+                    ctr.Text = "";
+                }
             }
         }
     }

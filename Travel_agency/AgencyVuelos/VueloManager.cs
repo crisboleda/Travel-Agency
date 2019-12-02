@@ -128,5 +128,25 @@ namespace Travel_agency.AgencyVuelos {
                 }
             }
         }
+
+
+        public void GenerateReserva(int codVuelo, int codTurista, int codSucursal, string clase) {
+
+            using (NpgsqlConnection conn = db.CreateConnection()) {
+
+                using (IDbCommand cmd = conn.CreateCommand()) {
+
+                    cmd.CommandText = "INSERT INTO reserva_vuelos (cod_vuelo, cod_turista, cod_sucursal, clase_vuelo) " +
+                        "VALUES (@CodVuelo, @CodTurista, @CodSucursal, @ClaseVuelo)";
+
+                    db.CreateParameter(cmd, "@CodVuelo", codVuelo);
+                    db.CreateParameter(cmd, "@CodTurista", codTurista);
+                    db.CreateParameter(cmd, "@CodSucursal", codSucursal);
+                    db.CreateParameter(cmd, "@ClaseVuelo", clase);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

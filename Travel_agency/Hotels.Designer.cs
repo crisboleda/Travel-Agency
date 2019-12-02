@@ -48,7 +48,11 @@
             this.columnHeader3});
             this.listViewHotels.FullRowSelect = true;
             this.listViewHotels.HideSelection = false;
+<<<<<<< HEAD
             this.listViewHotels.Location = new System.Drawing.Point(11, 81);
+=======
+            this.listViewHotels.Location = new System.Drawing.Point(11, 20);
+>>>>>>> d4179af2a7b0d717fb6ab0987de00050891634a8
             this.listViewHotels.Margin = new System.Windows.Forms.Padding(2);
             this.listViewHotels.Name = "listViewHotels";
             this.listViewHotels.Size = new System.Drawing.Size(582, 269);
@@ -75,7 +79,11 @@
             // 
             this.textBoxID.Enabled = false;
             this.textBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+<<<<<<< HEAD
             this.textBoxID.Location = new System.Drawing.Point(629, 108);
+=======
+            this.textBoxID.Location = new System.Drawing.Point(629, 49);
+>>>>>>> d4179af2a7b0d717fb6ab0987de00050891634a8
             this.textBoxID.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(312, 24);
@@ -85,7 +93,11 @@
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+<<<<<<< HEAD
             this.textBox1.Location = new System.Drawing.Point(629, 180);
+=======
+            this.textBox1.Location = new System.Drawing.Point(629, 120);
+>>>>>>> d4179af2a7b0d717fb6ab0987de00050891634a8
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(312, 24);
@@ -95,7 +107,11 @@
             // 
             this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+<<<<<<< HEAD
             this.textBox2.Location = new System.Drawing.Point(629, 253);
+=======
+            this.textBox2.Location = new System.Drawing.Point(629, 188);
+>>>>>>> d4179af2a7b0d717fb6ab0987de00050891634a8
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(312, 24);
@@ -103,7 +119,11 @@
             // 
             // btnCreateHotel
             // 
+<<<<<<< HEAD
             this.btnCreateHotel.Location = new System.Drawing.Point(629, 316);
+=======
+            this.btnCreateHotel.Location = new System.Drawing.Point(629, 255);
+>>>>>>> d4179af2a7b0d717fb6ab0987de00050891634a8
             this.btnCreateHotel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateHotel.Name = "btnCreateHotel";
             this.btnCreateHotel.Size = new System.Drawing.Size(81, 34);
@@ -113,7 +133,11 @@
             // 
             // btnUpdateHotel
             // 
+<<<<<<< HEAD
             this.btnUpdateHotel.Location = new System.Drawing.Point(746, 316);
+=======
+            this.btnUpdateHotel.Location = new System.Drawing.Point(746, 255);
+>>>>>>> d4179af2a7b0d717fb6ab0987de00050891634a8
             this.btnUpdateHotel.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateHotel.Name = "btnUpdateHotel";
             this.btnUpdateHotel.Size = new System.Drawing.Size(81, 34);
@@ -123,7 +147,11 @@
             // 
             // btnDeleteHotel
             // 
+<<<<<<< HEAD
             this.btnDeleteHotel.Location = new System.Drawing.Point(860, 316);
+=======
+            this.btnDeleteHotel.Location = new System.Drawing.Point(860, 255);
+>>>>>>> d4179af2a7b0d717fb6ab0987de00050891634a8
             this.btnDeleteHotel.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteHotel.Name = "btnDeleteHotel";
             this.btnDeleteHotel.Size = new System.Drawing.Size(81, 34);
@@ -134,7 +162,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(626, 225);
+=======
+            this.label1.Location = new System.Drawing.Point(626, 160);
+>>>>>>> d4179af2a7b0d717fb6ab0987de00050891634a8
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
@@ -144,7 +176,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(626, 147);
+=======
+            this.label2.Location = new System.Drawing.Point(626, 92);
+>>>>>>> d4179af2a7b0d717fb6ab0987de00050891634a8
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
@@ -154,7 +190,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
+<<<<<<< HEAD
             this.label3.Location = new System.Drawing.Point(626, 81);
+=======
+            this.label3.Location = new System.Drawing.Point(626, 20);
+>>>>>>> d4179af2a7b0d717fb6ab0987de00050891634a8
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(21, 13);

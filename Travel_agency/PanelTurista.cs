@@ -7,25 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Travel_agency.AgencyUser;
-using Travel_agency.AgencyVuelos;
 
 namespace Travel_agency {
-
-    public partial class PanelAdmin : Form {
+    public partial class PanelTurista : Form {
 
         User super_user;
-        Form1 parent;
+        Form parent;
 
-        public PanelAdmin(User super_user, Form1 parent) {
+        List<Form> forms = new List<Form>();
+
+        public PanelTurista(User super_user, Form parent) {
             this.super_user = super_user;
             this.parent = parent;
 
             InitializeComponent();
+
             ShowView(new Perfil(super_user, menuStrip1));
+            MenuItemPerfil.Enabled = false;
         }
 
-        // Controlamos el click de cada item del menú superior
+        private void Close_Forms(object sender, FormClosingEventArgs e) {
+            parent.Close();
+        }
+
+        // Controlamos el click de cada item del menu superior
         private void Click_Item_Menu(object sender, ToolStripItemClickedEventArgs e) {
 
             closeForms();
@@ -35,13 +40,10 @@ namespace Travel_agency {
             if (e.ClickedItem.Name == "MenuItemPerfil") {
                 ShowView(new Perfil(super_user, menuStrip1));
 
-            }else if (e.ClickedItem.Name == "MenuItemSucursales") {
-                ShowView(new Sucursales());
-
             }else if (e.ClickedItem.Name == "MenuItemVuelos") {
-                ShowView(new Vuelos(super_user));
-
+                ShowView(new ReservarVuelo(super_user));
             }
+
         }
 
         // Mostramos una vista que le pasamos como parametro (Dentro del padre "this")
@@ -62,10 +64,6 @@ namespace Travel_agency {
             foreach (ToolStripMenuItem item in menuStrip1.Items) {
                 item.Enabled = true;
             }
-        }
-
-        private void Close_Forms(object sender, FormClosingEventArgs e) {
-            parent.Close();
         }
     }
 }

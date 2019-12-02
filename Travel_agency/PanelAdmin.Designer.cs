@@ -57,8 +57,12 @@
             // 
             // perfilToolStripMenuItem
             // 
+            this.perfilToolStripMenuItem.Checked = true;
+            this.perfilToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.perfilToolStripMenuItem.Enabled = false;
             this.perfilToolStripMenuItem.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
+            this.perfilToolStripMenuItem.ShowShortcutKeys = false;
             this.perfilToolStripMenuItem.Size = new System.Drawing.Size(75, 34);
             this.perfilToolStripMenuItem.Text = "Perfil";
             this.perfilToolStripMenuItem.Click += new System.EventHandler(this.perfilToolStripMenuItem_Click);
@@ -83,6 +87,7 @@
             this.vuelosToolStripMenuItem1.Name = "vuelosToolStripMenuItem1";
             this.vuelosToolStripMenuItem1.Size = new System.Drawing.Size(91, 34);
             this.vuelosToolStripMenuItem1.Text = "Vuelos";
+            this.vuelosToolStripMenuItem1.Click += new System.EventHandler(this.vuelosToolStripMenuItem1_Click);
             // 
             // reservasDeVuelosToolStripMenuItem
             // 

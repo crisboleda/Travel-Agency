@@ -179,8 +179,7 @@
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(252, 30);
             this.textBoxPassword.TabIndex = 14;
-            this.textBoxPassword.UseSystemPasswordChar = true;
-            // 
+            this.textBoxPassword.UseSystemPasswordChar = true;            // 
             // label8
             // 
             this.label8.AutoSize = true;

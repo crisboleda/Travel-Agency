@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Travel_agency.AgencyUser;
+using Travel_agency.AgencyVuelos;
 
 namespace Travel_agency {
     public partial class PanelAdmin : Form {
@@ -23,6 +24,8 @@ namespace Travel_agency {
 
             InitializeComponent();
             loadFormsList();
+            forms[0].MdiParent = this;
+            forms[0].Show();
         }
 
         private void perfilToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -65,8 +68,17 @@ namespace Travel_agency {
         private void loadFormsList() {
             forms.Add(new Perfil(super_user, menuStrip1));
             forms.Add(new Sucursales());
+
+            forms.Add(new Vuelos(super_user));
         }
 
+        private void vuelosToolStripMenuItem1_Click(object sender, EventArgs e) {
+            closeForms();
+            resetMenuItems();
+            vuelosToolStripMenuItem1.Enabled = false;
 
+            forms[2].MdiParent = this;
+            forms[2].Show();
+        }
     }
 }

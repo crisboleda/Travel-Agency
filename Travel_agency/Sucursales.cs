@@ -23,6 +23,7 @@ namespace Travel_agency {
 
         private void Init() {
             _SucursalManager = new SucursalManager();
+            DisableBtnUpdateDelete();
             GetSucursales();
         }
 
@@ -61,6 +62,8 @@ namespace Travel_agency {
         private void Mouse_Click(object sender, MouseEventArgs e) {
 
             btnCreateSucursal.Enabled = false;
+            btnUpdateSucursal.Enabled = true;
+            btnDeleteSucursal.Enabled = true;
 
             for (int i = 0; i < listViewSucursales.Items.Count; i++) {
 
@@ -79,7 +82,7 @@ namespace Travel_agency {
                 _SucursalManager.UpdateSucursal(Convert.ToInt32(textBoxID.Text), textBoxAddres.Text, textBoxCellphone.Text);
                 clearBoxes();
                 GetSucursales();
-                btnCreateSucursal.Enabled = true;
+                DisableBtnUpdateDelete();
             }
         }
 
@@ -89,19 +92,25 @@ namespace Travel_agency {
                 _SucursalManager.DeleteSucursal(Convert.ToInt32(textBoxID.Text));
                 clearBoxes();
                 GetSucursales();
-                btnCreateSucursal.Enabled = true;
+                DisableBtnUpdateDelete();
             }
 
         }
 
         private void listViewSucursales_SelectedIndexChanged(object sender, EventArgs e) {
             clearBoxes();
-            btnCreateSucursal.Enabled = true;
+            DisableBtnUpdateDelete();
         }
 
         private void Click_Window(object sender, EventArgs e) {
             clearBoxes();
+            DisableBtnUpdateDelete();
+        }
+
+        private void DisableBtnUpdateDelete() {
             btnCreateSucursal.Enabled = true;
+            btnUpdateSucursal.Enabled = false;
+            btnDeleteSucursal.Enabled = false;
         }
     }
 }

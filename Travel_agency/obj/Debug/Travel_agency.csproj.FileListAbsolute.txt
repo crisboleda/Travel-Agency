@@ -32,3 +32,4 @@ C:\Users\Cristhian\source\repos\Travel_agency\Travel_agency\obj\Debug\Travel_age
 C:\Users\Cristhian\source\repos\Travel_agency\Travel_agency\obj\Debug\Travel_agency.PanelAdmin.resources
 C:\Users\Cristhian\source\repos\Travel_agency\Travel_agency\obj\Debug\Travel_agency.Perfil.resources
 C:\Users\Cristhian\source\repos\Travel_agency\Travel_agency\obj\Debug\Travel_agency.Sucursales.resources
+C:\Users\Cristhian\source\repos\Travel_agency\Travel_agency\obj\Debug\Travel_agency.Vuelos.resources

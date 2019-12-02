@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Travel_agency {
-    public partial class Sucursal : Form {
-        public Sucursal() {
+namespace Travel_agency
+{
+    public partial class Hotels : Form
+    {
+        public Hotels()
+        {
             InitializeComponent();
         }
-
     }
 }

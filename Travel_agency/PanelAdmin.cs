@@ -40,7 +40,9 @@ namespace Travel_agency {
 
             }else if (e.ClickedItem.Name == "MenuItemVuelos") {
                 ShowView(new Vuelos(super_user));
-
+            }else if (e.ClickedItem.Name == "MenuItemHoteles")
+            {
+                ShowView(new Hotels());
             }
         }
 

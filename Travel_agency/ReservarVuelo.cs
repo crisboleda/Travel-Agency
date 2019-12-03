@@ -74,7 +74,7 @@ namespace Travel_agency {
         private void GetSucursales() {
 
             listViewSucursales.Items.Clear();
-            sucursales = _SucursalManager.GetSucusales();
+            sucursales = _SucursalManager.GetSucursales();
 
             foreach (Sucursal sucursal in sucursales) {
 

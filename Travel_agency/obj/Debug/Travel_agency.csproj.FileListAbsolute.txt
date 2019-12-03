@@ -72,3 +72,4 @@ C:\Users\Usuario\Desktop\Agency\Travel-Agency\Travel_agency\obj\Debug\Travel_age
 C:\Users\Usuario\Desktop\Agency\Travel-Agency\Travel_agency\obj\Debug\Travel_agency.csproj.CopyComplete
 C:\Users\Usuario\Desktop\Agency\Travel-Agency\Travel_agency\obj\Debug\Travel_agency.exe
 C:\Users\Usuario\Desktop\Agency\Travel-Agency\Travel_agency\obj\Debug\Travel_agency.pdb
+C:\Users\Usuario\Desktop\Agency\Travel-Agency\Travel_agency\obj\Debug\Travel_agency.Hotels.resources

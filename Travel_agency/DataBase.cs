@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Npgsql;
 
 namespace Travel_agency {
 
@@ -12,7 +13,7 @@ namespace Travel_agency {
 
         public NpgsqlConnection CreateConnection() {
             NpgsqlConnection conn = new NpgsqlConnection {
-                ConnectionString = "Username = postgres; Password = toor; Host = 127.0.0.1; Port = 5432; Database = travel_agency"
+                ConnectionString = "Username = postgres; Password = Esteban01; Host = 127.0.0.1; Port = 5432; Database = travel_agency"
             };
             conn.Open();
             return conn;

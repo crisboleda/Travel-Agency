@@ -7,14 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Travel_agency.AgencyHotels;
 
 namespace Travel_agency
 {
-    public partial class Hotels : Form
-    {
-        public Hotels()
-        {
-            InitializeComponent();
-        }
+    public partial class Hotels : Form {
     }
 }

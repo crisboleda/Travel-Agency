@@ -79,15 +79,13 @@
   <ItemGroup>
     <Compile Include="AgencyHotels\Hotels.cs" />
     <Compile Include="AgencyHotels\HotelsManager.cs" />
-<<<<<<< HEAD
     <Compile Include="Hotels.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Hotels.Designer.cs">
       <DependentUpon>Hotels.cs</DependentUpon>
     </Compile>
-=======
->>>>>>> d4179af2a7b0d717fb6ab0987de00050891634a8
+
     <Compile Include="PanelTurista.cs">
       <SubType>Form</SubType>
     </Compile>

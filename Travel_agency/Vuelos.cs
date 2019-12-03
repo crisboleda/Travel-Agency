@@ -30,12 +30,12 @@ namespace Travel_agency {
             btnDeleteVuelo.Enabled = false;
             btnUpdateVuelo.Enabled = false;
 
-            GetVuelos();
+            GetVuelos("Activo");
         }
 
-        private void GetVuelos() {
+        private void GetVuelos(string estado) {
             listViewVuelos.Items.Clear();
-            vuelos = _VueloManager.GetVuelos();
+            vuelos = _VueloManager.GetVuelos(estado);
 
             foreach (Vuelo vuelo in vuelos) {
                 ListViewItem item = listViewVuelos.Items.Add(vuelo.GetIDVuelo().ToString());
@@ -67,7 +67,7 @@ namespace Travel_agency {
                         super_user.GetCedula()
                     );
                     clearBoxes();
-                    GetVuelos();
+                    GetVuelos("Activo");
                 }
                 catch {
                     MessageBox.Show("Error");
@@ -156,7 +156,7 @@ namespace Travel_agency {
             }
 
             DisableBtnUpdateDelete();
-            GetVuelos();
+            GetVuelos("Activo");
         }
 
         private void btnDeleteVuelo_Click(object sender, EventArgs e) {
@@ -169,7 +169,10 @@ namespace Travel_agency {
             }
 
             DisableBtnUpdateDelete();
-            GetVuelos();
+            GetVuelos("Activo");
+
+            radioButton1.Checked = true;
+
         }
 
 
@@ -192,6 +195,14 @@ namespace Travel_agency {
             btnUpdateVuelo.Enabled = false;
             btnDeleteVuelo.Enabled = false;
             clearBoxes();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e) {
+            GetVuelos("Inactivo");
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e) {
+            GetVuelos("Activo");
         }
     }
 }

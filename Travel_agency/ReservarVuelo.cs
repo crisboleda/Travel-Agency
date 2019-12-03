@@ -38,7 +38,7 @@ namespace Travel_agency {
         public void GetVuelos() {
 
             listViewVuelos.Items.Clear();
-            vuelos = _VueloManager.GetVuelos();
+            vuelos = _VueloManager.GetVuelos("Activo");
 
             foreach (Vuelo vuelo in vuelos) {
 
@@ -74,7 +74,7 @@ namespace Travel_agency {
         private void GetSucursales() {
 
             listViewSucursales.Items.Clear();
-            sucursales = _SucursalManager.GetSucusales();
+            sucursales = _SucursalManager.GetSucusales("Activo");
 
             foreach (Sucursal sucursal in sucursales) {
 

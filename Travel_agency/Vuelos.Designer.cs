@@ -50,6 +50,8 @@
             this.btnUpdateVuelo = new System.Windows.Forms.Button();
             this.btnDeleteVuelo = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.plazasTurista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plazasTotales)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +68,7 @@
             this.columnHeader10,
             this.columnHeader5});
             this.listViewVuelos.FullRowSelect = true;
-            this.listViewVuelos.Location = new System.Drawing.Point(26, 32);
+            this.listViewVuelos.Location = new System.Drawing.Point(31, 45);
             this.listViewVuelos.Name = "listViewVuelos";
             this.listViewVuelos.Size = new System.Drawing.Size(1254, 253);
             this.listViewVuelos.TabIndex = 0;
@@ -113,7 +115,7 @@
             // textBoxOrigen
             // 
             this.textBoxOrigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textBoxOrigen.Location = new System.Drawing.Point(569, 339);
+            this.textBoxOrigen.Location = new System.Drawing.Point(567, 376);
             this.textBoxOrigen.Name = "textBoxOrigen";
             this.textBoxOrigen.Size = new System.Drawing.Size(265, 28);
             this.textBoxOrigen.TabIndex = 2;
@@ -121,7 +123,7 @@
             // textBoxDestino
             // 
             this.textBoxDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textBoxDestino.Location = new System.Drawing.Point(569, 422);
+            this.textBoxDestino.Location = new System.Drawing.Point(567, 459);
             this.textBoxDestino.Name = "textBoxDestino";
             this.textBoxDestino.Size = new System.Drawing.Size(265, 28);
             this.textBoxDestino.TabIndex = 3;
@@ -130,7 +132,7 @@
             // 
             this.textBoxID.Enabled = false;
             this.textBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textBoxID.Location = new System.Drawing.Point(156, 339);
+            this.textBoxID.Location = new System.Drawing.Point(154, 376);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(313, 28);
             this.textBoxID.TabIndex = 4;
@@ -138,7 +140,7 @@
             // textBoxTime
             // 
             this.textBoxTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxTime.Location = new System.Drawing.Point(156, 514);
+            this.textBoxTime.Location = new System.Drawing.Point(154, 551);
             this.textBoxTime.Name = "textBoxTime";
             this.textBoxTime.Size = new System.Drawing.Size(259, 30);
             this.textBoxTime.TabIndex = 6;
@@ -146,7 +148,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(153, 319);
+            this.label1.Location = new System.Drawing.Point(151, 356);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(25, 17);
             this.label1.TabIndex = 7;
@@ -155,7 +157,7 @@
             // dateTimePickerDate
             // 
             this.dateTimePickerDate.CalendarTitleForeColor = System.Drawing.Color.YellowGreen;
-            this.dateTimePickerDate.Location = new System.Drawing.Point(156, 428);
+            this.dateTimePickerDate.Location = new System.Drawing.Point(154, 465);
             this.dateTimePickerDate.Name = "dateTimePickerDate";
             this.dateTimePickerDate.Size = new System.Drawing.Size(313, 22);
             this.dateTimePickerDate.TabIndex = 8;
@@ -163,7 +165,7 @@
             // 
             // plazasTurista
             // 
-            this.plazasTurista.Location = new System.Drawing.Point(569, 514);
+            this.plazasTurista.Location = new System.Drawing.Point(567, 551);
             this.plazasTurista.Name = "plazasTurista";
             this.plazasTurista.Size = new System.Drawing.Size(131, 22);
             this.plazasTurista.TabIndex = 9;
@@ -176,7 +178,7 @@
             this.listBoxFormatTime.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.listBoxFormatTime.Location = new System.Drawing.Point(421, 516);
+            this.listBoxFormatTime.Location = new System.Drawing.Point(419, 553);
             this.listBoxFormatTime.Name = "listBoxFormatTime";
             this.listBoxFormatTime.Size = new System.Drawing.Size(68, 24);
             this.listBoxFormatTime.TabIndex = 10;
@@ -184,7 +186,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(153, 408);
+            this.label2.Location = new System.Drawing.Point(151, 445);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 17);
             this.label2.TabIndex = 11;
@@ -193,7 +195,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(153, 494);
+            this.label3.Location = new System.Drawing.Point(151, 531);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 17);
             this.label3.TabIndex = 12;
@@ -202,7 +204,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(566, 319);
+            this.label4.Location = new System.Drawing.Point(564, 356);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 17);
             this.label4.TabIndex = 13;
@@ -211,7 +213,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(566, 402);
+            this.label5.Location = new System.Drawing.Point(564, 439);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 17);
             this.label5.TabIndex = 14;
@@ -220,7 +222,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(566, 494);
+            this.label6.Location = new System.Drawing.Point(564, 531);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(134, 17);
             this.label6.TabIndex = 15;
@@ -229,7 +231,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(722, 494);
+            this.label7.Location = new System.Drawing.Point(720, 531);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 17);
             this.label7.TabIndex = 16;
@@ -237,14 +239,14 @@
             // 
             // plazasTotales
             // 
-            this.plazasTotales.Location = new System.Drawing.Point(725, 514);
+            this.plazasTotales.Location = new System.Drawing.Point(723, 551);
             this.plazasTotales.Name = "plazasTotales";
             this.plazasTotales.Size = new System.Drawing.Size(109, 22);
             this.plazasTotales.TabIndex = 17;
             // 
             // btnCreateVuelo
             // 
-            this.btnCreateVuelo.Location = new System.Drawing.Point(975, 319);
+            this.btnCreateVuelo.Location = new System.Drawing.Point(975, 368);
             this.btnCreateVuelo.Name = "btnCreateVuelo";
             this.btnCreateVuelo.Size = new System.Drawing.Size(229, 48);
             this.btnCreateVuelo.TabIndex = 18;
@@ -254,7 +256,7 @@
             // 
             // btnUpdateVuelo
             // 
-            this.btnUpdateVuelo.Location = new System.Drawing.Point(975, 402);
+            this.btnUpdateVuelo.Location = new System.Drawing.Point(975, 465);
             this.btnUpdateVuelo.Name = "btnUpdateVuelo";
             this.btnUpdateVuelo.Size = new System.Drawing.Size(229, 48);
             this.btnUpdateVuelo.TabIndex = 19;
@@ -264,11 +266,11 @@
             // 
             // btnDeleteVuelo
             // 
-            this.btnDeleteVuelo.Location = new System.Drawing.Point(975, 494);
+            this.btnDeleteVuelo.Location = new System.Drawing.Point(975, 565);
             this.btnDeleteVuelo.Name = "btnDeleteVuelo";
             this.btnDeleteVuelo.Size = new System.Drawing.Size(229, 50);
             this.btnDeleteVuelo.TabIndex = 20;
-            this.btnDeleteVuelo.Text = "Eliminar";
+            this.btnDeleteVuelo.Text = "Eliminar (Inactivar)";
             this.btnDeleteVuelo.UseVisualStyleBackColor = true;
             this.btnDeleteVuelo.Click += new System.EventHandler(this.btnDeleteVuelo_Click);
             // 
@@ -281,11 +283,37 @@
             this.menuStrip1.TabIndex = 21;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(31, 12);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(120, 21);
+            this.radioButton1.TabIndex = 22;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Vuelos activos";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(172, 12);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(131, 21);
+            this.radioButton2.TabIndex = 23;
+            this.radioButton2.Text = "Vuelos inactivos";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
             // Vuelos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1311, 723);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.btnDeleteVuelo);
             this.Controls.Add(this.btnUpdateVuelo);
             this.Controls.Add(this.btnCreateVuelo);
@@ -349,5 +377,7 @@
         private System.Windows.Forms.Button btnUpdateVuelo;
         private System.Windows.Forms.Button btnDeleteVuelo;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }

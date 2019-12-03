@@ -24,8 +24,8 @@ namespace Travel_agency.AgencyVuelos {
 
                             cmd.Transaction = trx;
 
-                            cmd.CommandText = "INSERT INTO vuelos (date_vuelo, time_vuelo, origen, destino, plazas_totales, plazas_clase_turista)" +
-                                "VALUES (@Date, @Time, @Origen, @Destino, @Plazas_totales, @Plazas_clase_turista)";
+                            cmd.CommandText = "INSERT INTO vuelos (date_vuelo, time_vuelo, origen, destino, plazas_totales, plazas_clase_turista, estado_vuelo)" +
+                                "VALUES (@Date, @Time, @Origen, @Destino, @Plazas_totales, @Plazas_clase_turista, @Estado)";
 
                             db.CreateParameter(cmd, "Date", dateVuelo);
                             db.CreateParameter(cmd, "Time", timeVuelo);
@@ -33,6 +33,7 @@ namespace Travel_agency.AgencyVuelos {
                             db.CreateParameter(cmd, "Destino", destino);
                             db.CreateParameter(cmd, "Plazas_totales", plazasTotales);
                             db.CreateParameter(cmd, "Plazas_clase_turista", plazasClaseTurista);
+                            db.CreateParameter(cmd, "Estado", "Activo");
 
                             cmd.ExecuteNonQuery();
 
@@ -58,7 +59,7 @@ namespace Travel_agency.AgencyVuelos {
         }
 
 
-        public List<Vuelo> GetVuelos() {
+        public List<Vuelo> GetVuelos(string estado) {
 
             List<Vuelo> vuelos = new List<Vuelo>();
 
@@ -67,7 +68,9 @@ namespace Travel_agency.AgencyVuelos {
                 using (IDbCommand cmd = conn.CreateCommand()) {
 
                     cmd.CommandText = "SELECT id_vuelo, date_vuelo, time_vuelo, origen, destino, plazas_totales, plazas_clase_turista " +
-                        "FROM vuelos";
+                        "FROM vuelos WHERE estado_vuelo = @Estado";
+
+                    db.CreateParameter(cmd, "Estado", estado);
                     
                     using (IDataReader cursor = cmd.ExecuteReader()) {
 
@@ -98,9 +101,10 @@ namespace Travel_agency.AgencyVuelos {
 
                 using (IDbCommand cmd = conn.CreateCommand()) {
 
-                    cmd.CommandText = "DELETE FROM vuelos WHERE id_vuelo = @ID";
+                    cmd.CommandText = "UPDATE vuelos SET estado_vuelo = @Estado WHERE id_vuelo = @ID";
 
-                    db.CreateParameter(cmd, "@ID", ID_vuelo);
+                    db.CreateParameter(cmd, "ID", ID_vuelo);
+                    db.CreateParameter(cmd, "Estado", "Inactivo");
 
                     cmd.ExecuteNonQuery();
                 }
@@ -147,6 +151,73 @@ namespace Travel_agency.AgencyVuelos {
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+
+        public List<ReservaVuelo> GetReservasVuelo() {
+
+            List<ReservaVuelo> reservasVuelos = new List<ReservaVuelo>();
+
+            using (NpgsqlConnection conn = db.CreateConnection()) {
+
+                using (IDbCommand cmd = conn.CreateCommand()) {
+
+                    cmd.CommandText = "SELECT id_reserva_vuelo, cod_vuelo, cod_turista, cod_sucursal, clase_vuelo, asientos " +
+                        "FROM reserva_vuelos";
+
+                    using (IDataReader cursor = cmd.ExecuteReader()) {
+
+                        while (cursor.Read()) {
+                            ReservaVuelo newReserva = new ReservaVuelo(
+                                Convert.ToInt32(cursor["id_reserva_vuelo"]),
+                                Convert.ToInt32(cursor["cod_vuelo"]),
+                                Convert.ToInt32(cursor["cod_turista"]),
+                                Convert.ToInt32(cursor["cod_sucursal"]),
+                                cursor["clase_vuelo"].ToString(),
+                                Convert.ToInt32(cursor["asientos"])
+                            );
+
+                            reservasVuelos.Add(newReserva);
+                        }
+                    }
+                }
+            }
+            return reservasVuelos;
+        }
+
+
+        public Vuelo GetVueloReservado(int idVuelo) {
+
+            Vuelo vuelo = null;
+
+            using (NpgsqlConnection conn = db.CreateConnection()) {
+
+                using (IDbCommand cmd = conn.CreateCommand()) {
+
+
+                    cmd.CommandText = "SELECT id_vuelo, date_vuelo, time_vuelo, origen, destino, plazas_totales, plazas_clase_turista " +
+                        "FROM vuelos WHERE id_vuelo = @ID";
+
+                    db.CreateParameter(cmd, "ID", idVuelo);
+
+                    using (IDataReader cursor = cmd.ExecuteReader()) {
+
+                        while (cursor.Read()) {
+                            Vuelo foundVuelo = new Vuelo(
+                                Convert.ToInt32(cursor["id_vuelo"]),
+                                cursor["date_vuelo"].ToString(),
+                                cursor["time_vuelo"].ToString(),
+                                cursor["origen"].ToString(),
+                                cursor["destino"].ToString(),
+                                Convert.ToInt32(cursor["plazas_totales"].ToString()),
+                                Convert.ToInt32(cursor["plazas_clase_turista"].ToString())
+                            );
+
+                            vuelo = foundVuelo;
+                        }
+                    }
+                }
+            }
+            return vuelo;
         }
     }
 }

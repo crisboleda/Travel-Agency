@@ -12,7 +12,7 @@ namespace Travel_agency.AgencySucursal {
 
         private DataBase db = new DataBase();
 
-        public List<Sucursal> GetSucusales() {
+        public List<Sucursal> GetSucusales(string estado) {
 
             List<Sucursal> sucursales = new List<Sucursal>();
 
@@ -21,7 +21,9 @@ namespace Travel_agency.AgencySucursal {
 
                 using (IDbCommand cmd = conn.CreateCommand()) {
 
-                    cmd.CommandText = "SELECT id_sucursal, address, cellphone FROM sucursales";
+                    cmd.CommandText = "SELECT id_sucursal, address, cellphone FROM sucursales WHERE estado_sucursal = @Estado";
+                    db.CreateParameter(cmd, "Estado", estado);
+
                     using (IDataReader cursor = cmd.ExecuteReader()) {
 
                         while (cursor.Read()) {
@@ -52,10 +54,12 @@ namespace Travel_agency.AgencySucursal {
 
                             cmd.Transaction = trx;
 
-                            cmd.CommandText = "INSERT INTO sucursales (address, cellphone) VALUES (@Address, @Cellphone)";
+                            cmd.CommandText = "INSERT INTO sucursales (address, cellphone, estado_sucursal) " +
+                                "VALUES (@Address, @Cellphone, @Estado)";
 
                             db.CreateParameter(cmd, "Address", address);
                             db.CreateParameter(cmd, "Cellphone", cellphone);
+                            db.CreateParameter(cmd, "Estado", "Activo");
 
                             cmd.ExecuteNonQuery();
                         }
@@ -93,13 +97,45 @@ namespace Travel_agency.AgencySucursal {
 
                 using (IDbCommand cmd = conn.CreateCommand()) {
 
-                    cmd.CommandText = "DELETE FROM sucursales WHERE id_sucursal = @ID";
+                    cmd.CommandText = "UPDATE sucursales SET estado_sucursal = @Estado WHERE id_sucursal = @ID";
 
                     db.CreateParameter(cmd, "ID", id_sucursal);
+                    db.CreateParameter(cmd, "Estado", "Inactivo");
 
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+
+
+        public Sucursal GetSurcusalReservaVuelo(int IDSucursal) {
+
+            Sucursal foundSucursal = null;
+
+            using (NpgsqlConnection conn = db.CreateConnection()) {
+
+                using (IDbCommand cmd = conn.CreateCommand()) {
+
+                    cmd.CommandText = "SELECT id_sucursal, address, cellphone FROM sucursales WHERE id_sucursal = @ID";
+
+                    db.CreateParameter(cmd, "ID", IDSucursal);
+
+                    using (IDataReader cursor = cmd.ExecuteReader()) {
+
+                        while (cursor.Read()) {
+
+                            Sucursal sucursal = new Sucursal(
+                                Convert.ToInt32(cursor["id_sucursal"].ToString()),
+                                cursor["address"].ToString(),
+                                cursor["cellphone"].ToString()
+                            );
+
+                            foundSucursal = sucursal;
+                        }
+                    }
+                }
+            }
+            return foundSucursal;
         }
     }
 }

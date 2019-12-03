@@ -24,14 +24,14 @@ namespace Travel_agency {
         private void Init() {
             _SucursalManager = new SucursalManager();
             DisableBtnUpdateDelete();
-            GetSucursales();
+            GetSucursales("Activo");
         }
 
         // Método para listar todas las sucursales de la base de datos
-        private void GetSucursales() {
+        private void GetSucursales(string estado) {
 
             listViewSucursales.Items.Clear();
-            listSucursales = _SucursalManager.GetSucusales();
+            listSucursales = _SucursalManager.GetSucusales(estado);
 
             foreach (Sucursal sucursal in listSucursales) {
 
@@ -49,7 +49,7 @@ namespace Travel_agency {
             if (textBoxAddres.Text != "" && textBoxCellphone.Text != "") {
                 _SucursalManager.CreateSucursal(textBoxAddres.Text.ToString(), textBoxCellphone.Text.ToString());
                 clearBoxes();
-                GetSucursales();
+                GetSucursales("Activo");
             }
         }
 
@@ -81,7 +81,7 @@ namespace Travel_agency {
             if (textBoxID.Text != "" && textBoxAddres.Text != "" && textBoxCellphone.Text != "") {
                 _SucursalManager.UpdateSucursal(Convert.ToInt32(textBoxID.Text), textBoxAddres.Text, textBoxCellphone.Text);
                 clearBoxes();
-                GetSucursales();
+                GetSucursales("Activo");
                 DisableBtnUpdateDelete();
             }
         }
@@ -91,10 +91,12 @@ namespace Travel_agency {
             if (textBoxID.Text != "" && textBoxAddres.Text != "" && textBoxCellphone.Text != "") {
                 _SucursalManager.DeleteSucursal(Convert.ToInt32(textBoxID.Text));
                 clearBoxes();
-                GetSucursales();
+
+                GetSucursales("Activo");
                 DisableBtnUpdateDelete();
             }
 
+            radioButton1.Checked = true;
         }
 
         private void listViewSucursales_SelectedIndexChanged(object sender, EventArgs e) {
@@ -111,6 +113,14 @@ namespace Travel_agency {
             btnCreateSucursal.Enabled = true;
             btnUpdateSucursal.Enabled = false;
             btnDeleteSucursal.Enabled = false;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e) {
+            GetSucursales("Activo");
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e) {
+            GetSucursales("Inactivo");
         }
     }
 }

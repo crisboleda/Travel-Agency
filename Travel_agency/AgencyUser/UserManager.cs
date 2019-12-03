@@ -111,5 +111,44 @@ namespace Travel_agency.AgencyUser {
                 }
             }
         }
+
+
+        public User GetUserReservaVuelo(int IDTurista) {
+
+            User user_found = null;
+
+            using (NpgsqlConnection conn = db.CreateConnection()) {
+
+                using (IDbCommand cmd = conn.CreateCommand()) {
+
+                    cmd.CommandText = "SELECT * FROM users WHERE id_user = @ID";
+
+                    db.CreateParameter(cmd, "ID", (IDTurista).ToString());
+
+                    using (IDataReader cursor = cmd.ExecuteReader()) {
+
+                        try {
+
+                            while (cursor.Read()) {
+                                user_found = new User(
+                                    Convert.ToInt32(cursor["id_user"]),
+                                    cursor["rol"].ToString(),
+                                    cursor["name"].ToString(),
+                                    cursor["lastname"].ToString(),
+                                    cursor["address"].ToString(),
+                                    cursor["telefono"].ToString(),
+                                    cursor["email"].ToString(),
+                                    ""
+                                );
+                            }
+                        }
+                        catch {
+                            cursor.Close();
+                        }
+                    }
+                }
+            }
+            return user_found;
+        }
     }
 }

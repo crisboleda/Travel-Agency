@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnUpdateSucursal = new System.Windows.Forms.Button();
             this.btnDeleteSucursal = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // listViewSucursales
@@ -46,7 +48,7 @@
             this.columnHeader2,
             this.columnHeader3});
             this.listViewSucursales.FullRowSelect = true;
-            this.listViewSucursales.Location = new System.Drawing.Point(36, 27);
+            this.listViewSucursales.Location = new System.Drawing.Point(27, 47);
             this.listViewSucursales.Name = "listViewSucursales";
             this.listViewSucursales.Size = new System.Drawing.Size(660, 276);
             this.listViewSucursales.TabIndex = 0;
@@ -148,9 +150,33 @@
             this.btnDeleteSucursal.Name = "btnDeleteSucursal";
             this.btnDeleteSucursal.Size = new System.Drawing.Size(108, 42);
             this.btnDeleteSucursal.TabIndex = 12;
-            this.btnDeleteSucursal.Text = "Eliminar";
+            this.btnDeleteSucursal.Text = "Eliminar (Inactivar)";
             this.btnDeleteSucursal.UseVisualStyleBackColor = true;
             this.btnDeleteSucursal.Click += new System.EventHandler(this.btnDeleteSucursal_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(27, 20);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(147, 21);
+            this.radioButton1.TabIndex = 13;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Sucursales activas";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(228, 20);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(158, 21);
+            this.radioButton2.TabIndex = 14;
+            this.radioButton2.Text = "Sucursales inactivas";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // Sucursales
             // 
@@ -159,6 +185,8 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1311, 723);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.btnDeleteSucursal);
             this.Controls.Add(this.btnUpdateSucursal);
             this.Controls.Add(this.label1);
@@ -195,5 +223,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnUpdateSucursal;
         private System.Windows.Forms.Button btnDeleteSucursal;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }

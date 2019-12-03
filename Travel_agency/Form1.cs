@@ -34,6 +34,10 @@ namespace Travel_agency {
             User super_user = _UserManager.SignIn(email, password);
             
             if (super_user == null) {
+
+                textBoxEmail.Text = "";
+                textBoxPassword.Text = "";
+
                 errorSignIn.Text = "Password or Email Incorrect";
 
             }else {

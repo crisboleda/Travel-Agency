@@ -42,6 +42,10 @@ namespace Travel_agency {
 
             }else if (e.ClickedItem.Name == "MenuItemVuelos") {
                 ShowView(new ReservarVuelo(super_user));
+
+            }else if (e.ClickedItem.Name == "MenuItemHoteles") {
+                ShowView(new ReservarHotel(super_user));
+
             }
 
         }

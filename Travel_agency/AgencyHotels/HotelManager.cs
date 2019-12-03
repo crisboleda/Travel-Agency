@@ -130,5 +130,10 @@ namespace Travel_agency.AgencyHotels {
                 }
             }
         }
+
+
+        public void GenerateReservaHotel(ReservaHotel reserva) {
+
+        }
     }
 }

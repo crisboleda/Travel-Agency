@@ -30,6 +30,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listViewVuelos
@@ -70,9 +70,11 @@
             this.columnHeader10,
             this.columnHeader9});
             this.listViewVuelos.FullRowSelect = true;
-            this.listViewVuelos.Location = new System.Drawing.Point(32, 31);
+            this.listViewVuelos.HideSelection = false;
+            this.listViewVuelos.Location = new System.Drawing.Point(24, 25);
+            this.listViewVuelos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listViewVuelos.Name = "listViewVuelos";
-            this.listViewVuelos.Size = new System.Drawing.Size(765, 232);
+            this.listViewVuelos.Size = new System.Drawing.Size(575, 189);
             this.listViewVuelos.TabIndex = 1;
             this.listViewVuelos.UseCompatibleStateImageBehavior = false;
             this.listViewVuelos.View = System.Windows.Forms.View.Details;
@@ -108,39 +110,48 @@
             this.columnHeader10.Text = "Asientos (Clase Turista)";
             this.columnHeader10.Width = 160;
             // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Asientos (Primera Clase)";
+            this.columnHeader9.Width = 165;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(401, 363);
+            this.label5.Location = new System.Drawing.Point(301, 295);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 17);
+            this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 29;
             this.label5.Text = "Destino:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(401, 280);
+            this.label4.Location = new System.Drawing.Point(301, 228);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 17);
+            this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 28;
             this.label4.Text = "Origen:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 455);
+            this.label3.Location = new System.Drawing.Point(31, 370);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 17);
+            this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 27;
             this.label3.Text = "Hora:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 369);
+            this.label2.Location = new System.Drawing.Point(31, 300);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 26;
             this.label2.Text = "Fecha:";
             // 
@@ -148,18 +159,20 @@
             // 
             this.dateTimePickerDate.CalendarTitleForeColor = System.Drawing.Color.YellowGreen;
             this.dateTimePickerDate.Enabled = false;
-            this.dateTimePickerDate.Location = new System.Drawing.Point(44, 389);
+            this.dateTimePickerDate.Location = new System.Drawing.Point(33, 316);
+            this.dateTimePickerDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerDate.Name = "dateTimePickerDate";
-            this.dateTimePickerDate.Size = new System.Drawing.Size(313, 22);
+            this.dateTimePickerDate.Size = new System.Drawing.Size(236, 20);
             this.dateTimePickerDate.TabIndex = 23;
             this.dateTimePickerDate.Value = new System.DateTime(2019, 12, 20, 0, 0, 0, 0);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 280);
+            this.label1.Location = new System.Drawing.Point(31, 228);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 17);
+            this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 22;
             this.label1.Text = "ID:";
             // 
@@ -167,36 +180,40 @@
             // 
             this.textBoxTime.Enabled = false;
             this.textBoxTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxTime.Location = new System.Drawing.Point(44, 475);
+            this.textBoxTime.Location = new System.Drawing.Point(33, 386);
+            this.textBoxTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxTime.Name = "textBoxTime";
-            this.textBoxTime.Size = new System.Drawing.Size(313, 30);
+            this.textBoxTime.Size = new System.Drawing.Size(236, 26);
             this.textBoxTime.TabIndex = 21;
             // 
             // textBoxID
             // 
             this.textBoxID.Enabled = false;
             this.textBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textBoxID.Location = new System.Drawing.Point(44, 300);
+            this.textBoxID.Location = new System.Drawing.Point(33, 244);
+            this.textBoxID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(313, 28);
+            this.textBoxID.Size = new System.Drawing.Size(236, 24);
             this.textBoxID.TabIndex = 20;
             // 
             // textBoxDestino
             // 
             this.textBoxDestino.Enabled = false;
             this.textBoxDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textBoxDestino.Location = new System.Drawing.Point(404, 386);
+            this.textBoxDestino.Location = new System.Drawing.Point(303, 314);
+            this.textBoxDestino.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxDestino.Name = "textBoxDestino";
-            this.textBoxDestino.Size = new System.Drawing.Size(265, 28);
+            this.textBoxDestino.Size = new System.Drawing.Size(200, 24);
             this.textBoxDestino.TabIndex = 19;
             // 
             // textBoxOrigen
             // 
             this.textBoxOrigen.Enabled = false;
             this.textBoxOrigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textBoxOrigen.Location = new System.Drawing.Point(404, 300);
+            this.textBoxOrigen.Location = new System.Drawing.Point(303, 244);
+            this.textBoxOrigen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxOrigen.Name = "textBoxOrigen";
-            this.textBoxOrigen.Size = new System.Drawing.Size(265, 28);
+            this.textBoxOrigen.Size = new System.Drawing.Size(200, 24);
             this.textBoxOrigen.TabIndex = 18;
             // 
             // classVuelo
@@ -205,17 +222,19 @@
             this.classVuelo.Items.AddRange(new object[] {
             "Turista",
             "Primera"});
-            this.classVuelo.Location = new System.Drawing.Point(404, 481);
+            this.classVuelo.Location = new System.Drawing.Point(303, 391);
+            this.classVuelo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.classVuelo.Name = "classVuelo";
-            this.classVuelo.Size = new System.Drawing.Size(265, 24);
+            this.classVuelo.Size = new System.Drawing.Size(200, 21);
             this.classVuelo.TabIndex = 30;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(401, 455);
+            this.label6.Location = new System.Drawing.Point(301, 370);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 17);
+            this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 31;
             this.label6.Text = "Clase:";
             // 
@@ -227,9 +246,11 @@
             this.columnHeader6,
             this.columnHeader7});
             this.listViewSucursales.FullRowSelect = true;
-            this.listViewSucursales.Location = new System.Drawing.Point(820, 31);
+            this.listViewSucursales.HideSelection = false;
+            this.listViewSucursales.Location = new System.Drawing.Point(615, 25);
+            this.listViewSucursales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listViewSucursales.Name = "listViewSucursales";
-            this.listViewSucursales.Size = new System.Drawing.Size(461, 232);
+            this.listViewSucursales.Size = new System.Drawing.Size(347, 189);
             this.listViewSucursales.TabIndex = 32;
             this.listViewSucursales.UseCompatibleStateImageBehavior = false;
             this.listViewSucursales.View = System.Windows.Forms.View.Details;
@@ -253,9 +274,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(817, 280);
+            this.label7.Location = new System.Drawing.Point(613, 228);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 17);
+            this.label7.Size = new System.Drawing.Size(21, 13);
             this.label7.TabIndex = 38;
             this.label7.Text = "ID:";
             // 
@@ -263,26 +285,29 @@
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textBox1.Location = new System.Drawing.Point(820, 300);
+            this.textBox1.Location = new System.Drawing.Point(615, 244);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(461, 28);
+            this.textBox1.Size = new System.Drawing.Size(347, 24);
             this.textBox1.TabIndex = 37;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(817, 437);
+            this.label8.Location = new System.Drawing.Point(613, 355);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 17);
+            this.label8.Size = new System.Drawing.Size(57, 13);
             this.label8.TabIndex = 36;
             this.label8.Text = "Cellphone:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(817, 359);
+            this.label9.Location = new System.Drawing.Point(613, 292);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 17);
+            this.label9.Size = new System.Drawing.Size(48, 13);
             this.label9.TabIndex = 35;
             this.label9.Text = "Address:";
             // 
@@ -290,26 +315,29 @@
             // 
             this.textBoxCellphone.Enabled = false;
             this.textBoxCellphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textBoxCellphone.Location = new System.Drawing.Point(820, 457);
+            this.textBoxCellphone.Location = new System.Drawing.Point(615, 371);
+            this.textBoxCellphone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxCellphone.Name = "textBoxCellphone";
-            this.textBoxCellphone.Size = new System.Drawing.Size(461, 28);
+            this.textBoxCellphone.Size = new System.Drawing.Size(347, 24);
             this.textBoxCellphone.TabIndex = 34;
             // 
             // textBoxAddres
             // 
             this.textBoxAddres.Enabled = false;
             this.textBoxAddres.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.textBoxAddres.Location = new System.Drawing.Point(820, 379);
+            this.textBoxAddres.Location = new System.Drawing.Point(615, 308);
+            this.textBoxAddres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxAddres.Name = "textBoxAddres";
-            this.textBoxAddres.Size = new System.Drawing.Size(461, 28);
+            this.textBoxAddres.Size = new System.Drawing.Size(347, 24);
             this.textBoxAddres.TabIndex = 33;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.SkyBlue;
-            this.button1.Location = new System.Drawing.Point(482, 581);
+            this.button1.Location = new System.Drawing.Point(362, 472);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(418, 46);
+            this.button1.Size = new System.Drawing.Size(314, 37);
             this.button1.TabIndex = 39;
             this.button1.Text = "Generar Reserva de vuelo";
             this.button1.UseVisualStyleBackColor = false;
@@ -318,31 +346,28 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(29, 9);
+            this.label10.Location = new System.Drawing.Point(22, 7);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(128, 17);
+            this.label10.Size = new System.Drawing.Size(96, 13);
             this.label10.TabIndex = 40;
             this.label10.Text = "Vuelos Disponibles";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(817, 9);
+            this.label11.Location = new System.Drawing.Point(613, 7);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(78, 17);
+            this.label11.Size = new System.Drawing.Size(59, 13);
             this.label11.TabIndex = 41;
             this.label11.Text = "Sucursales";
             // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Asientos (Primera Clase)";
-            this.columnHeader9.Width = 165;
-            // 
             // ReservarVuelo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1311, 723);
+            this.ClientSize = new System.Drawing.Size(983, 587);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button1);
@@ -366,6 +391,7 @@
             this.Controls.Add(this.textBoxDestino);
             this.Controls.Add(this.textBoxOrigen);
             this.Controls.Add(this.listViewVuelos);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ReservarVuelo";

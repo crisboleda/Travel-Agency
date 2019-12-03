@@ -24,8 +24,6 @@ namespace Travel_agency {
 
         private void Init() {
             _VueloManager = new VueloManager();
-            dateTimePickerDate.Format = DateTimePickerFormat.Custom;
-            dateTimePickerDate.CustomFormat = "MMMM dd, yyyy";
 
             btnDeleteVuelo.Enabled = false;
             btnUpdateVuelo.Enabled = false;
@@ -103,8 +101,8 @@ namespace Travel_agency {
 
                 if (rectangle.Contains(e.Location)) {
                     textBoxID.Text = vuelos[i].GetIDVuelo().ToString();
-                    dateTimePickerDate.Value = DateTime.Parse(vuelos[i].GetDateVuelo());
 
+                    dateTimePickerDate.Value = DateTime.Parse(vuelos[i].GetDateVuelo() + " 0:00:00");
                     string[] times = (vuelos[i].GetTimeVuelo()).Split(' ');
 
                     textBoxTime.Text = times[0];
@@ -116,7 +114,6 @@ namespace Travel_agency {
                     btnUpdateVuelo.Enabled = true;
                     btnDeleteVuelo.Enabled = true;
                 }
-
             }
         }
 

@@ -79,7 +79,14 @@
   <ItemGroup>
     <Compile Include="AgencyHotels\Hotel.cs" />
     <Compile Include="AgencyHotels\HotelManager.cs" />
+    <Compile Include="AgencyHotels\ReservaHotel.cs" />
     <Compile Include="AgencyVuelos\ReservaVuelo.cs" />
+    <Compile Include="ReservarHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReservarHotel.Designer.cs">
+      <DependentUpon>ReservarHotel.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReservasVuelosAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +150,9 @@
     </Compile>
     <Compile Include="AgencySucursal\Sucursal.cs" />
     <Compile Include="AgencySucursal\SucursalManager.cs" />
+    <EmbeddedResource Include="ReservarHotel.resx">
+      <DependentUpon>ReservarHotel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReservasVuelosAdmin.resx">
       <DependentUpon>ReservasVuelosAdmin.cs</DependentUpon>
     </EmbeddedResource>

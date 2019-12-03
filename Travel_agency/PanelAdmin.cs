@@ -78,27 +78,6 @@ namespace Travel_agency {
             }
         }
 
-
-        // Mostramos una vista que le pasamos como parametro (Dentro del padre "this")
-        private void ShowView(Form view) {
-            view.MdiParent = this;
-            view.Show();
-        }
-
-        // Cerramos todos los forms dentro de la ventana padre
-        private void closeForms() {
-            foreach (Form window in MdiChildren) {
-                window.Close();
-            }
-        }
-
-        // Restablecemos todos los items a Enable (Que pueden ser clickeados)
-        private void resetMenuItems() {
-            foreach (ToolStripMenuItem item in menuStrip1.Items) {
-                item.Enabled = true;
-            }
-        }
-
         private void Close_Forms(object sender, FormClosingEventArgs e) {
             parent.Close();
         }

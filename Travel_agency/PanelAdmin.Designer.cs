@@ -63,7 +63,6 @@
             this.MenuItemPerfil.Name = "MenuItemPerfil";
             this.MenuItemPerfil.ShowShortcutKeys = false;
             this.MenuItemPerfil.Size = new System.Drawing.Size(75, 34);
-<<<<<<< HEAD
             this.MenuItemPerfil.Text = "Perfil";            // 
             // MenuItemSucursales
             // 
@@ -99,45 +98,7 @@
             // 
             // MenuItemCerrar
             // 
-=======
-            this.MenuItemPerfil.Text = "Perfil";
-            // 
-            // MenuItemSucursales
-            // 
-            this.MenuItemSucursales.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.MenuItemSucursales.Name = "MenuItemSucursales";
-            this.MenuItemSucursales.Size = new System.Drawing.Size(127, 34);
-            this.MenuItemSucursales.Text = "Sucursales";
-            // 
-            // MenuItemHoteles
-            // 
-            this.MenuItemHoteles.Name = "MenuItemHoteles";
-            this.MenuItemHoteles.Size = new System.Drawing.Size(101, 34);
-            this.MenuItemHoteles.Text = "Hoteles";            // 
-            // MenuItemVuelos
-            // 
-            this.MenuItemVuelos.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.MenuItemVuelos.Name = "MenuItemVuelos";
-            this.MenuItemVuelos.Size = new System.Drawing.Size(91, 34);
-            this.MenuItemVuelos.Text = "Vuelos";
-            // 
-            // MenuItemReservasVuelos
-            // 
-            this.MenuItemReservasVuelos.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.MenuItemReservasVuelos.Name = "MenuItemReservasVuelos";
-            this.MenuItemReservasVuelos.Size = new System.Drawing.Size(210, 34);
-            this.MenuItemReservasVuelos.Text = "Reservas de vuelos";
-            // 
-            // MenuItemReservasHoteles
-            // 
-            this.MenuItemReservasHoteles.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.MenuItemReservasHoteles.Name = "MenuItemReservasHoteles";
-            this.MenuItemReservasHoteles.Size = new System.Drawing.Size(218, 34);
-            this.MenuItemReservasHoteles.Text = "Reservas de hoteles";
-            // 
-            // MenuItemCerrar
-            // 
->>>>>>> Cristhian
+
             this.MenuItemCerrar.Name = "MenuItemCerrar";
             this.MenuItemCerrar.Size = new System.Drawing.Size(154, 34);
             this.MenuItemCerrar.Text = "Cerrar sesión";

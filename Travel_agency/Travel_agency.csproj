@@ -87,6 +87,12 @@
     <Compile Include="ReservarHotel.Designer.cs">
       <DependentUpon>ReservarHotel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReservasHotelesAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReservasHotelesAdmin.Designer.cs">
+      <DependentUpon>ReservasHotelesAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReservasVuelosAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     <Compile Include="AgencySucursal\SucursalManager.cs" />
     <EmbeddedResource Include="ReservarHotel.resx">
       <DependentUpon>ReservarHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservasHotelesAdmin.resx">
+      <DependentUpon>ReservasHotelesAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReservasVuelosAdmin.resx">
       <DependentUpon>ReservasVuelosAdmin.cs</DependentUpon>

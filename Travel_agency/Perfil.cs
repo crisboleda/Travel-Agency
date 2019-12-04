@@ -37,7 +37,7 @@ namespace Travel_agency {
 
 
         private void Form_Closed(object sender, FormClosedEventArgs e) {
-            menu.Items[4].Enabled = true;
+            menu.Items[3].Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e) {

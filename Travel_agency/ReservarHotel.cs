@@ -103,7 +103,7 @@ namespace Travel_agency {
 
         private void ClearBoxes() {
             foreach (Control ctx in Controls) {
-                if (ctx is TextBox) {
+                if (ctx is TextBox || ctx is ComboBox) {
                     ctx.Text = "";
                 }
             }
@@ -117,8 +117,30 @@ namespace Travel_agency {
             
             if (CheckBoxes()) {
 
+                if (Convert.ToInt16(textBoxRooms.Text) > 0) {
+                    int CodHotel = Convert.ToInt16(textBoxIDHotel.Text);
+                    string CodTurista = superUser.GetCedula().ToString();
+                    int CodSucursal = Convert.ToInt16(textBoxIDSucursal.Text);
+                    string pension = comboBoxPension.SelectedItem.ToString();
 
+                    string fechaLlegada = ((dateLlegada.Value.ToString()).Split(' '))[0];
+                    string fechaSalida = ((dateSalida.Value.ToString()).Split(' ')[0]);
 
+                    int habitaciones = Convert.ToInt16(textBoxRooms.Text);
+
+                    _HotelManager.GenerateReservaHotel(CodHotel, CodTurista, CodSucursal, pension, fechaLlegada, fechaSalida, habitaciones);
+                    MessageBox.Show("Su reserva fue realizada correctamente ¡Lo esperamos!");
+
+                    GetHoteles();
+                    GetSucursales();
+                }
+                else {
+                    MessageBox.Show("Lo sentimos no hay habitaciones disponibles, puede optar por otro hotel");
+                }
+                ClearBoxes();
+            }
+            else {
+                MessageBox.Show("Error asegurece de cumplir con todos los campos solicitados");
             }
 
         }
@@ -126,7 +148,7 @@ namespace Travel_agency {
 
         public bool CheckBoxes() {
 
-            if (textBoxIDHotel.Text != "" && textBoxIDSucursal.Text != "" && comboBoxPension.SelectedItem != null && Convert.ToInt16(cantidadHabitaciones.Value) != 0) {
+            if (textBoxIDHotel.Text != "" && textBoxIDSucursal.Text != "" && comboBoxPension.SelectedItem != null) {
                 return true;
             }
 

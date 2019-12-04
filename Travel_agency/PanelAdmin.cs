@@ -52,6 +52,10 @@ namespace Travel_agency {
                 ShowView(new ReservasVuelosAdmin());
 
             }
+            else if (e.ClickedItem.Name == "MenuItemReservasHoteles") {
+                ShowView(new ReservasHotelesAdmin());
+
+            }
             else if (e.ClickedItem.Name == "MenuItemCerrar") {
                 new Form1().Show();
                 this.Hide();

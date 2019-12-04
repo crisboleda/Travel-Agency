@@ -15,10 +15,9 @@ namespace Travel_agency.AgencyHotels {
         private string pension;
         private string fechaLlegada;
         private string fechaSalida;
-        private int cantidadHabitaciones;
 
-        public ReservaHotel(int IdReserva, int CodHotel, string CodTurista, int CodSucursal, string pension, string fechaLlegada, string fechaSalida, 
-            int cantidadHabitaciones) {
+        public ReservaHotel(int IdReserva, int CodHotel, string CodTurista, int CodSucursal, string pension, string fechaLlegada, string fechaSalida 
+            ) {
 
             this.IdReserva = IdReserva;
             this.CodHotel = CodHotel;
@@ -27,7 +26,6 @@ namespace Travel_agency.AgencyHotels {
             this.pension = pension;
             this.fechaLlegada = fechaLlegada;
             this.fechaSalida = fechaSalida;
-            this.cantidadHabitaciones = cantidadHabitaciones;
 
         }
 
@@ -44,6 +42,10 @@ namespace Travel_agency.AgencyHotels {
             return CodTurista;
         }
 
+        public int GetCodSucursal() {
+            return CodSucursal;
+        }
+
         public string GetPension() {
             return pension;
         }
@@ -56,9 +58,6 @@ namespace Travel_agency.AgencyHotels {
             return fechaSalida;
         }
 
-        public int GetCantidadHab() {
-            return cantidadHabitaciones;
-        }
 
     }
 }

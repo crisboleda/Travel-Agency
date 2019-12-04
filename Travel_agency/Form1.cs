@@ -71,8 +71,8 @@ namespace Travel_agency {
 
                 User new_user = new User(Convert.ToInt32(cedula), "Turista", name, lastName, address, cellphone, email, password);
                 _UserManager.CreateUser(new_user);
-                clearBoxes();
                 MessageBox.Show("Se regristró correctamente, Ahora inicie sesión");
+                clearBoxes();
             }
         }
 

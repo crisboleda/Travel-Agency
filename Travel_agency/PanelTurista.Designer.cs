@@ -27,7 +27,6 @@
             this.MenuItemPerfil = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemHoteles = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemVuelos = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemReservas = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemCerrar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -40,7 +39,6 @@
             this.MenuItemPerfil,
             this.MenuItemHoteles,
             this.MenuItemVuelos,
-            this.MenuItemReservas,
             this.MenuItemCerrar});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -59,7 +57,8 @@
             this.MenuItemPerfil.Name = "MenuItemPerfil";
             this.MenuItemPerfil.ShowShortcutKeys = false;
             this.MenuItemPerfil.Size = new System.Drawing.Size(75, 34);
-            this.MenuItemPerfil.Text = "Perfil";            // 
+            this.MenuItemPerfil.Text = "Perfil";
+            // 
             // MenuItemHoteles
             // 
             this.MenuItemHoteles.Name = "MenuItemHoteles";
@@ -71,13 +70,7 @@
             this.MenuItemVuelos.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.MenuItemVuelos.Name = "MenuItemVuelos";
             this.MenuItemVuelos.Size = new System.Drawing.Size(171, 34);
-            this.MenuItemVuelos.Text = "Reservar Vuelo";            // 
-            // MenuItemReservas
-            // 
-            this.MenuItemReservas.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.MenuItemReservas.Name = "MenuItemReservas";
-            this.MenuItemReservas.Size = new System.Drawing.Size(147, 34);
-            this.MenuItemReservas.Text = "Mis reservas";
+            this.MenuItemVuelos.Text = "Reservar Vuelo";
             // 
             // MenuItemCerrar
             // 
@@ -110,7 +103,6 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemPerfil;
         private System.Windows.Forms.ToolStripMenuItem MenuItemHoteles;
         private System.Windows.Forms.ToolStripMenuItem MenuItemVuelos;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemReservas;
         private System.Windows.Forms.ToolStripMenuItem MenuItemCerrar;
     }
 }

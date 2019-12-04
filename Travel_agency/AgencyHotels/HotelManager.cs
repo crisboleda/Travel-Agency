@@ -132,8 +132,109 @@ namespace Travel_agency.AgencyHotels {
         }
 
 
-        public void GenerateReservaHotel(ReservaHotel reserva) {
+        public void GenerateReservaHotel(int CodHotel, string CodTurista, int CodSucursal, string pension, 
+            string fechaLlegada, string fechaSalida, int habitaciones) {
 
+
+            using (NpgsqlConnection conn = db.CreateConnection()) {
+
+                using (IDbCommand cmd = conn.CreateCommand()) {
+
+                    cmd.CommandText = "INSERT INTO reserva_hoteles (cod_hotel, cod_turista, cod_sucursal, pension, fecha_llegada," +
+                        " fecha_salida) VALUES (@CodHotel, @CodTurista, @CodSucursal, @Pension, @FechaLlegada, @FechaSalida)";
+
+                    db.CreateParameter(cmd, "CodHotel", CodHotel);
+                    db.CreateParameter(cmd, "CodTurista", CodTurista);
+                    db.CreateParameter(cmd, "CodSucursal", CodSucursal);
+                    db.CreateParameter(cmd, "Pension", pension);
+                    db.CreateParameter(cmd, "FechaLlegada", fechaLlegada);
+                    db.CreateParameter(cmd, "FechaSalida", fechaSalida);
+
+                    cmd.ExecuteNonQuery();
+
+
+                    cmd.CommandText = "UPDATE hoteles SET number_plazas_disponibles = @Habitaciones WHERE id_hotel = @ID";
+
+                    db.CreateParameter(cmd, "Habitaciones", habitaciones - 1);
+                    db.CreateParameter(cmd, "ID", CodHotel);
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
         }
+
+
+        public List<ReservaHotel> GetReservasHoteles() {
+
+            List<ReservaHotel> reservas = new List<ReservaHotel>();
+
+            using (NpgsqlConnection conn = db.CreateConnection()) {
+
+                using (IDbCommand cmd = conn.CreateCommand()) {
+
+                    cmd.CommandText = "SELECT id_reserva_hotel, cod_hotel, cod_turista, cod_sucursal, pension," +
+                        " fecha_llegada, fecha_salida FROM reserva_hoteles";
+
+                    using (IDataReader cursor = cmd.ExecuteReader()) {
+
+                        while (cursor.Read()) {
+
+                            ReservaHotel newReserva = new ReservaHotel(
+                                Convert.ToInt16(cursor["id_reserva_hotel"].ToString()),
+                                Convert.ToInt16(cursor["cod_hotel"].ToString()),
+                                cursor["cod_turista"].ToString(),
+                                Convert.ToInt16(cursor["cod_sucursal"].ToString()),
+                                cursor["pension"].ToString(),
+                                cursor["fecha_llegada"].ToString(),
+                                cursor["fecha_salida"].ToString()
+                            );
+
+                            reservas.Add(newReserva);
+                        }
+                    }
+                }
+            }
+            return reservas;
+        }
+
+
+        
+        public Hotel GetHotelReserva(int IDHotel) {
+
+            Hotel foundHotel = null;
+
+            using (NpgsqlConnection conn = db.CreateConnection()) {
+
+                using (IDbCommand cmd = conn.CreateCommand()) {
+
+                    cmd.CommandText = "SELECT id_hotel, name, address, city, cellphone, number_plazas_disponibles " +
+                        "FROM hoteles WHERE id_hotel = @ID";
+
+                    db.CreateParameter(cmd, "ID", IDHotel);
+
+                    using (IDataReader cursor = cmd.ExecuteReader()) {
+
+                        while (cursor.Read()) {
+
+                            foundHotel = new Hotel(
+                                Convert.ToInt16(cursor["id_hotel"].ToString()),
+                                cursor["name"].ToString(),
+                                cursor["address"].ToString(),
+                                cursor["city"].ToString(),
+                                Convert.ToInt32(cursor["cellphone"].ToString()),
+                                Convert.ToInt32(cursor["number_plazas_disponibles"].ToString()) 
+                            );
+
+                        }
+
+                    }
+
+                }
+
+            }
+            return foundHotel;
+        }
+
     }
 }

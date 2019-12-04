@@ -80,3 +80,5 @@ C:\Users\Aprendiz\source\repos\Travel-Agency\Travel_agency\obj\Debug\Travel_agen
 C:\Users\Aprendiz\source\repos\Travel-Agency\Travel_agency\obj\Debug\Travel_agency.exe
 C:\Users\Aprendiz\source\repos\Travel-Agency\Travel_agency\obj\Debug\Travel_agency.pdb
 C:\Users\Aprendiz\source\repos\Travel-Agency\Travel_agency\obj\Debug\Travel_agency.ReservarHotel.resources
+C:\Users\Cristhian\source\repos\Travel_agency\Travel_agency\obj\Debug\Travel_agency.ReservarHotel.resources
+C:\Users\Cristhian\source\repos\Travel_agency\Travel_agency\obj\Debug\Travel_agency.ReservasHotelesAdmin.resources

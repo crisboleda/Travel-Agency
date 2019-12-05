@@ -28,6 +28,9 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -44,9 +47,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listViewHotels
@@ -64,7 +64,7 @@
             this.listViewHotels.Location = new System.Drawing.Point(11, 11);
             this.listViewHotels.Margin = new System.Windows.Forms.Padding(2);
             this.listViewHotels.Name = "listViewHotels";
-            this.listViewHotels.Size = new System.Drawing.Size(969, 269);
+            this.listViewHotels.Size = new System.Drawing.Size(969, 275);
             this.listViewHotels.TabIndex = 1;
             this.listViewHotels.UseCompatibleStateImageBehavior = false;
             this.listViewHotels.View = System.Windows.Forms.View.Details;
@@ -83,6 +83,21 @@
             // 
             this.columnHeader3.Text = "Address";
             this.columnHeader3.Width = 177;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "City";
+            this.columnHeader4.Width = 139;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Cellphone";
+            this.columnHeader5.Width = 185;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Quantity Rooms";
+            this.columnHeader6.Width = 177;
             // 
             // textBoxID
             // 
@@ -242,21 +257,6 @@
             this.label7.Size = new System.Drawing.Size(24, 13);
             this.label7.TabIndex = 25;
             this.label7.Text = "City";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "City";
-            this.columnHeader4.Width = 139;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Cellphone";
-            this.columnHeader5.Width = 185;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Quantity Rooms";
-            this.columnHeader6.Width = 177;
             // 
             // Hotels
             // 

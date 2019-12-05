@@ -40,12 +40,23 @@ namespace Travel_agency {
             if (e.ClickedItem.Name == "MenuItemPerfil") {
                 ShowView(new Perfil(super_user, menuStrip1));
 
-            }else if (e.ClickedItem.Name == "MenuItemVuelos") {
+            }
+            else if (e.ClickedItem.Name == "MenuItemVuelos") {
                 ShowView(new ReservarVuelo(super_user));
 
-            }else if (e.ClickedItem.Name == "MenuItemHoteles") {
+            }
+            else if (e.ClickedItem.Name == "MenuItemHoteles") {
                 ShowView(new ReservarHotel(super_user));
 
+            }
+            else if (e.ClickedItem.Name == "MenuItemMisReservas") {
+                ShowView(new MisReservas(super_user));
+
+            }
+            else if (e.ClickedItem.Name == "MenuItemCerrar") {
+                Hide();
+                Form1 newForm = new Form1();
+                newForm.Show();
             }
 
         }

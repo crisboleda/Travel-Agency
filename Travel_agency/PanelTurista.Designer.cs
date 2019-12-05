@@ -28,6 +28,7 @@
             this.MenuItemHoteles = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemVuelos = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemCerrar = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemMisReservas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,6 +40,7 @@
             this.MenuItemPerfil,
             this.MenuItemHoteles,
             this.MenuItemVuelos,
+            this.MenuItemMisReservas,
             this.MenuItemCerrar});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -78,6 +80,12 @@
             this.MenuItemCerrar.Size = new System.Drawing.Size(154, 34);
             this.MenuItemCerrar.Text = "Cerrar sesión";
             // 
+            // MenuItemMisReservas
+            // 
+            this.MenuItemMisReservas.Name = "MenuItemMisReservas";
+            this.MenuItemMisReservas.Size = new System.Drawing.Size(147, 34);
+            this.MenuItemMisReservas.Text = "Mis reservas";
+            // 
             // PanelTurista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -104,5 +112,6 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemHoteles;
         private System.Windows.Forms.ToolStripMenuItem MenuItemVuelos;
         private System.Windows.Forms.ToolStripMenuItem MenuItemCerrar;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemMisReservas;
     }
 }

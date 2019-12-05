@@ -81,6 +81,12 @@
     <Compile Include="AgencyHotels\HotelManager.cs" />
     <Compile Include="AgencyHotels\ReservaHotel.cs" />
     <Compile Include="AgencyVuelos\ReservaVuelo.cs" />
+    <Compile Include="MisReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MisReservas.Designer.cs">
+      <DependentUpon>MisReservas.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReservarHotel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </Compile>
     <Compile Include="AgencySucursal\Sucursal.cs" />
     <Compile Include="AgencySucursal\SucursalManager.cs" />
+    <EmbeddedResource Include="MisReservas.resx">
+      <DependentUpon>MisReservas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReservarHotel.resx">
       <DependentUpon>ReservarHotel.cs</DependentUpon>
     </EmbeddedResource>

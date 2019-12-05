@@ -76,7 +76,7 @@ namespace Travel_agency.AgencyUser {
                                     cursor["address"].ToString(),
                                     cursor["telefono"].ToString(),
                                     cursor["email"].ToString(),
-                                    ""
+                                    cursor["password"].ToString()
                                 );
                             }
                         }

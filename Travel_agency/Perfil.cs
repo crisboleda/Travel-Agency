@@ -15,6 +15,7 @@ namespace Travel_agency {
         User super_user;
         MenuStrip menu;
         UserManager _UserManager;
+        Util utils = new Util();
 
         public Perfil(User super_user, MenuStrip menu) {
             this.super_user = super_user;
@@ -53,27 +54,49 @@ namespace Travel_agency {
 
         private void btnSaveChanges_Click(object sender, EventArgs e) {
 
-            btnSaveChanges.Enabled = false;
-            btnUpdate.Enabled = true;
-    
-            User user_update = new User(
-                Convert.ToInt32(textBoxCedula.Text.ToString()),
-                textBoxName.Text.ToString(),
-                textBoxName.Text.ToString(),
-                textBoxLastname.Text.ToString(),
-                textBoxAddress.Text.ToString(),
-                textBoxCellphone.Text.ToString(),
-                textBoxEmail.Text.ToString(),
-                textBoxPassword.Text.ToString()
-            );
+            if (checkBoxes()) {
+                if (utils.checkEmail(textBoxEmail.Text)) {
+                    User user_update = new User(
+                        Convert.ToInt32(textBoxCedula.Text.ToString()),
+                        textBoxRank.Text.ToString(),
+                        textBoxName.Text.ToString(),
+                        textBoxLastname.Text.ToString(),
+                        textBoxAddress.Text.ToString(),
+                        textBoxCellphone.Text.ToString(),
+                        textBoxEmail.Text.ToString(),
+                        textBoxPassword.Text.ToString()
+                     );
 
-            _UserManager.UpdateUser(user_update);
+                    _UserManager.UpdateUser(user_update);
 
-            foreach (Control ctr in Controls) {
-                if (ctr is TextBox) {
-                    ctr.Enabled = false;
+                    foreach (Control ctr in Controls) {
+                        if (ctr is TextBox) {
+                            ctr.Enabled = false;
+                        }
+                    }
+
+                    btnSaveChanges.Enabled = false;
+                    btnUpdate.Enabled = true;
+
+                    MessageBox.Show("Actualización correcta");
                 }
+                else {
+                    MessageBox.Show("El correo electronico ingresado es incorrecto");
+                }
+
+            }else {
+                MessageBox.Show("Los campos deben estar completos");
             }
         }
+
+        private bool checkBoxes() {
+            if (textBoxName.Text != "" && textBoxLastname.Text != "" && textBoxAddress.Text != "" && textBoxCellphone.Text != "" && 
+                textBoxEmail.Text != "" && textBoxPassword.Text != "") {
+
+                return true;
+            }
+            return false;
+        }
+        
     }
 }

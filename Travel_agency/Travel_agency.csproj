@@ -105,6 +105,7 @@
     <Compile Include="ReservasVuelosAdmin.Designer.cs">
       <DependentUpon>ReservasVuelosAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util.cs" />
     <Compile Include="ViewHotelAdmin.cs">
       <SubType>Form</SubType>
     </Compile>

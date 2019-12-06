@@ -197,9 +197,8 @@ namespace Travel_agency.AgencyHotels {
             }
             return reservas;
         }
-
-
         
+
         public Hotel GetHotelReserva(int IDHotel) {
 
             Hotel foundHotel = null;

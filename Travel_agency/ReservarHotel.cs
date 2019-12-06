@@ -154,6 +154,5 @@ namespace Travel_agency {
 
             return false;
         }
-
     }
 }

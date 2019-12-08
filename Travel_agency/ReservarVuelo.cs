@@ -103,25 +103,41 @@ namespace Travel_agency {
 
         private void button1_Click(object sender, EventArgs e) {
 
-            string clase = "Turista";
 
             if (textBoxID.Text != "" && textBox1.Text != "" && classVuelo.Text != "") {
 
-                if (classVuelo.SelectedIndex == 1) {
-                    clase = "Primera";
+                string classSelected = classVuelo.Text;
+                Vuelo vuelo = _VueloManager.GetVueloReservado(Convert.ToInt16(textBoxID.Text));
+
+
+                if (classSelected == "Turista" && vuelo.GetPlazasClaseTurista() > 0) {
+                    GenerateNewReserva(classSelected, vuelo.GetPlazasClaseTurista() - 1, vuelo);
+
+                }else if (classSelected == "Primera" && vuelo.GetPlazasTotales() > 0) {
+                    GenerateNewReserva(classSelected, vuelo.GetPlazasTotales() - 1, vuelo);
+
+                }else {
+                    MessageBox.Show("Lo sentimos, no hay asientos en la clase que desea viajar");
                 }
-
-                int codVuelo = Convert.ToInt32(textBoxID.Text);
-                int codTurista = super_user.GetCedula();
-                int codSucursal = Convert.ToInt32(textBox1.Text);
-
-                _VueloManager.GenerateReserva(codVuelo, codTurista, codSucursal, clase);
-                MessageBox.Show("La reserva del vuelo se realizó con ¡Exito!");
-                clearBoxes();
 
             }else {
                 MessageBox.Show("Asegurate seleccionar y estables campos");
             }
+        }
+
+        private void GenerateNewReserva(string classSelected, int asientos, Vuelo vuelo) {
+
+            _VueloManager.UpdateAsientos(classSelected, asientos, vuelo);
+
+            int codVuelo = Convert.ToInt32(textBoxID.Text);
+            int codTurista = super_user.GetCedula();
+            int codSucursal = Convert.ToInt32(textBox1.Text);
+
+            _VueloManager.GenerateReserva(codVuelo, codTurista, codSucursal, classSelected);
+            MessageBox.Show("La reserva del vuelo se realizó con ¡Exito!");
+            clearBoxes();
+
+            GetVuelos();
         }
 
         private void clearBoxes() {

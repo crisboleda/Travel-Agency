@@ -15,8 +15,11 @@ namespace Travel_agency {
 
         private SucursalManager _SucursalManager;
         List<Sucursal> listSucursales;
+        User superUser;
 
-        public Sucursales() {
+        public Sucursales(User superUser) {
+            this.superUser = superUser;
+
             InitializeComponent();
             Init();
         }
@@ -47,7 +50,7 @@ namespace Travel_agency {
         private void btnCreateSucursal_Click(object sender, EventArgs e) {
 
             if (textBoxAddres.Text != "" && textBoxCellphone.Text != "") {
-                _SucursalManager.CreateSucursal(textBoxAddres.Text.ToString(), textBoxCellphone.Text.ToString());
+                _SucursalManager.CreateSucursal(textBoxAddres.Text.ToString(), textBoxCellphone.Text.ToString(), superUser);
                 clearBoxes();
                 GetSucursales("Activo");
             }

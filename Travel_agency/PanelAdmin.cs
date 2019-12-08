@@ -37,7 +37,7 @@ namespace Travel_agency {
 
             }
             else if (e.ClickedItem.Name == "MenuItemSucursales") {
-                ShowView(new Sucursales());
+                ShowView(new Sucursales(super_user));
 
             }
             else if (e.ClickedItem.Name == "MenuItemHoteles") {

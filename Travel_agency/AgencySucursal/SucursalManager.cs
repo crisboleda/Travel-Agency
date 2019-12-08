@@ -42,7 +42,7 @@ namespace Travel_agency.AgencySucursal {
             return sucursales;
         }
 
-        public void CreateSucursal(string address, string cellphone) {
+        public void CreateSucursal(string address, string cellphone, User user) {
 
             using (NpgsqlConnection conn = db.CreateConnection()) {
 
@@ -62,6 +62,16 @@ namespace Travel_agency.AgencySucursal {
                             db.CreateParameter(cmd, "Estado", "Activo");
 
                             cmd.ExecuteNonQuery();
+
+                            cmd.CommandText = "INSERT INTO logs_created (cod_usuario, action, created) VALUES (" +
+                                "@CodUser, @Action, @Created)";
+
+                            db.CreateParameter(cmd, "@CodUser", user.GetCedula().ToString());
+                            db.CreateParameter(cmd, "@Action", "Creación de una nueva sucursal");
+                            db.CreateParameter(cmd, "@Created", DateTime.Now);
+
+                            cmd.ExecuteNonQuery();
+
                         }
                         trx.Commit();
                     }

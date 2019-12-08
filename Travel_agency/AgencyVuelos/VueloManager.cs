@@ -219,5 +219,28 @@ namespace Travel_agency.AgencyVuelos {
             }
             return vuelo;
         }
+
+
+        public void UpdateAsientos(string clase, int newPlazas, Vuelo vuelo) {
+
+            using (NpgsqlConnection conn = db.CreateConnection()) {
+
+                using (IDbCommand cmd = conn.CreateCommand()) {
+
+                    if (clase == "Turista") {
+                        cmd.CommandText = "UPDATE vuelos SET plazas_clase_turista = @Plazas WHERE id_vuelo = @ID";
+
+                    }
+                    else {
+                        cmd.CommandText = "UPDATE vuelos SET plazas_totales = @Plazas WHERE id_vuelo = @ID";
+                    }
+
+                    db.CreateParameter(cmd, "Plazas", newPlazas);
+                    db.CreateParameter(cmd, "ID", vuelo.GetIDVuelo());
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

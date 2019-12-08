@@ -16,6 +16,7 @@ namespace Travel_agency {
     public partial class Form1 : Form {
 
         private UserManager _UserManager;
+        private Util utils = new Util();
 
         public Form1() {
             InitializeComponent();
@@ -71,7 +72,7 @@ namespace Travel_agency {
             // Comprobar que haya llenado todos los campos del formulario de registro.
             if (email != "" && password != "" && cedula != "" && name != "" && address != "" && lastName != "") {
 
-                if (CheckBoxEmail(email)) {
+                if (utils.checkEmail(email)) {
                     User new_user = new User(Convert.ToInt32(cedula), "Turista", name, lastName, address, cellphone, email, password);
                     _UserManager.CreateUser(new_user);
                     MessageBox.Show("Se regristró correctamente, Ahora inicie sesión");
@@ -91,19 +92,6 @@ namespace Travel_agency {
                     ctr.Text = "";
                 }
             }
-        }
-
-        private bool CheckBoxEmail(string email) {
-
-            string MatchEmailPattern =
-            @"^(([\w-]+\.)+[\w-]+|([a-zA-Z]{1}|[\w-]{2,}))@"
-            + @"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?
-				[0-9]{1,2}|25[0-5]|2[0-4][0-9])\."
-            + @"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?
-				[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
-            + @"([a-zA-Z0-9]+[\w-]+\.)+[a-zA-Z]{1}[a-zA-Z0-9-]{1,23})$";
-
-            return Regex.IsMatch(email, MatchEmailPattern);
         }
     }
 }
